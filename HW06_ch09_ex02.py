@@ -15,10 +15,33 @@
 
 # Body
 
+def print_no_e():
+
+    with open('words.txt', 'r') as fin:
+        lines = fin.readlines()
+        count = 0
+        for line in lines:
+  #          name = line.split()[0]
+            if has_no_e(line):
+                count = count + 1
+                print(line)
+    print("percentage = " + str(((count/len(lines))*100)))
+
+
+def has_no_e(word):
+    if 'e' not in word:
+        return True
+    else:
+        return False
+
+
+
+
 
 ##############################################################################
 def main():
-    pass  # Call your function(s) here.
+    print_no_e()  # Call your function(s) here.
+
 
 if __name__ == '__main__':
     main()
